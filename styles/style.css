@@ -65,6 +65,7 @@ input[type="number"] {
   justify-content: center;
 }
 #calculate {
+  font-family: 'MedievalSharp', cursive; 
   background-color: #b08e53;
   color: #000;
   border: none;
