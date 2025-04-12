@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalkulator Obrażeń UO</title>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <div id="app">
+    <h1>Kalkulator obrażeń czarów</h1>
+    <div id="grid">
+      <div id="inputs">
+        <label for="school">Umiejętność:</label>
+        <select id="school">
+          <option value="magery">Magia:</option>
+        </select>
+
+        <label for="spell">Czar:</label>
+        <select id="spell">
+          <option value="magicArrow">Magic Arrow</option>
+          <option value="harm">Harm</option>
+          <option value="fireball">Fireball</option>
+          <option value="lightning">Lightning</option>
+          <option value="explosion">Explosion</option>
+          <option value="meteorSwarm">Meteor Swarm</option>
+          <option value="earthquake">Earthquake</option>
+        </select>
+
+        <label>Inteligencja: <input type="number" id="int" value="10" /></label>
+        <label>Mądrość (Eval Int): <input type="number" id="eval" value="0" /></label>
+        <label>Inskrypcja: <input type="number" id="scribe" value="0" /></label>
+        <label>Dodatkowe obrażenia czarów (SDI): <input type="number" id="sdi" value="0" /></label>
+        <label>Szybkość Rzucania (FC): <input type="number" id="fc" value="0" min="0" max="2" /></label>
+        <label>Szybkość Odzysku (FCR): <input type="number" id="fcr" value="0" min="0" max="6" /></label>
+
+        <div id="extraInputs"></div>
+        <div id="zoomControl">
+          <button id="calculate">Oblicz</button>
+        </div>
+      </div>
+
+      <div id="output" class="box">
+        <div style="height: 28px;"></div>
+
+        <div class="output-group">
+          <div class="output-label">Obrażenia:</div>
+          <div class="output-row">
+            <div><strong>Min:</strong> <span id="minDmg" class="output-value">---</span></div>
+            <div><strong>Śr:</strong> <span id="avgDmg" class="output-value">---</span></div>
+            <div><strong>Max:</strong> <span id="maxDmg" class="output-value">---</span></div>
+          </div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Obrażenia na sekundę:</div>
+          <div class="output-row">
+            <div><strong>Min:</strong> <span id="dpsMin" class="output-value">---</span></div>
+            <div><strong>Śr:</strong> <span id="dpsAvg" class="output-value">---</span></div>
+            <div><strong>Max:</strong> <span id="dpsMax" class="output-value">---</span></div>
+          </div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Obrażenia na minutę:</div>
+          <div class="output-row">
+            <div><strong>Min:</strong> <span id="dpmMin" class="output-value">---</span></div>
+            <div><strong>Śr:</strong> <span id="dpmAvg" class="output-value">---</span></div>
+            <div><strong>Max:</strong> <span id="dpmMax" class="output-value">---</span></div>
+          </div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Obrażenia w czasie 5 minut:</div>
+          <div class="output-row">
+            <div><strong>Min:</strong> <span id="dp5mMin" class="output-value">---</span></div>
+            <div><strong>Śr:</strong> <span id="dp5mAvg" class="output-value">---</span></div>
+            <div><strong>Max:</strong> <span id="dp5mMax" class="output-value">---</span></div>
+          </div>
+        </div>
+
+        <div class="output-group">
+          <div class="output-label">Czary na minutę:</div>
+          <div class="output-row">
+            <div style="flex: 1;"><span id="castsPerMinute" class="output-value">---</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="versionInfo">v1.2</div>
+  </div>
+  <script type="module" src="scripts/main.js"></script>
+</body>
+</html>
