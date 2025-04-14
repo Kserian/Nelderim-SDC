@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/style.css" />
 </head>
+
 <body>
   <div id="app">
     <h1>Kalkulator obrażeń czarów</h1>
@@ -27,15 +29,18 @@
           <option value="energyBolt">Energy Bolt</option>
           <option value="explosion">Explosion</option>
           <option value="meteorSwarm">Meteor Swarm</option>
+          <option value="chainLightning">Chain Lightning</option>
+          <option value="flameStrike">Flame Strike</option>
           <option value="earthquake">Earthquake</option>
         </select>
 
         <label>Inteligencja: <input type="number" id="int" value="10" /></label>
-        <label>Mądrość (Eval Int): <input type="number" id="eval" value="0" /></label>
+        <label>Mądrość: <input type="number" id="eval" value="0" /></label>
         <label>Inskrypcja: <input type="number" id="scribe" value="0" /></label>
         <label>Dodatkowe obrażenia czarów (SDI): <input type="number" id="sdi" value="0" /></label>
         <label>Szybkość Rzucania (FC): <input type="number" id="fc" value="0" min="0" max="2" /></label>
-        <label>Szybkość Odzysku (FCR): <input type="number" id="fcr" value="0" min="0" max="6" /></label>
+        <label>Szybkość Powtórzenia (FCR): <input type="number" id="fcr" value="0" min="0" max="6" /></label>
+        <label>Obniżenie Kosztu Manny (LMC): <input type="number" id="lmc" value="0" min="0" max="40" /></label>
 
         <div id="extraInputs"></div>
         <div id="zoomControl">
@@ -83,15 +88,50 @@
         </div>
 
         <div class="output-group">
+          <div class="output-label">Koszt Many:</div>
+          <div class="output-row">
+            <div>
+              <div class="output-label-mini">Na Czar:</div>
+              <div class="output-value" id="manaPerCast">---</div>
+            </div>
+            <div>
+              <div class="output-label-mini">Na Minutę:</div>
+              <div class="output-value" id="manaPerMinute">---</div>
+            </div>
+            <div>
+              <div class="output-label-mini">Na 5 Minut:</div>
+              <div class="output-value" id="manaPer5Minutes">---</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="output-group">
           <div class="output-label">Czary na minutę:</div>
           <div class="output-row">
             <div style="flex: 1;"><span id="castsPerMinute" class="output-value">---</span></div>
           </div>
         </div>
+
+        <div class="output-group">
+          <div class="output-label">Średnie obrażenia na 1 punkt many:</div>
+          <div class="output-row">
+            <div>
+              <div class="output-label-mini">Na Czar:</div>
+              <div class="output-value" id="effPerCast">---</div>
+            </div>
+            <div>
+              <div class="output-label-mini">Na Minutę:</div>
+              <div class="output-value" id="effPerMinute">---</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div id="versionInfo">v1.3</div>
+  </div>
+  </div>
+  <div id="versionInfo">v1.4</div>
   </div>
   <script type="module" src="scripts/main.js"></script>
 </body>
+
 </html>
